@@ -34,7 +34,7 @@ RIMCの中心には、次の2つのレイヤーがある：
 
 $$
 \alpha_{\text{drift}}(t)
-= \int_{t-T}^{t}\varepsilon_R(\tau)\,G(\tau)\,e^{-\lambda(t-\tau)}\,d\tau
+= \int_{t-T}^{t}\varepsilon_R(\tau)G(\tau)e^{-\lambda(t-\tau)}d\tau
 $$
 
 ここで：
@@ -57,13 +57,13 @@ RIMCは、相互に関係する3つのコンポーネントから構成される
 価値生成エンジンの典型的な形：
 
 $$
-\frac{dV}{dt} = L(t)\,A(t)\,R(t)^{\beta(t)} - \kappa_V(t)\,V(t)^{\mu(t)}
+\frac{dV}{dt} = L(t)A(t)R(t)^{\beta(t)} - \kappa_V(t)V(t)^{\mu(t)}
 $$
 
 これに対応する、$R(t)$ の再帰方程式の一例：
 
 $$
-\frac{dR}{dt} = \gamma(t)\,V(t)^{\delta(t)} - \kappa_R(t)\,R(t)^{\nu(t)}
+\frac{dR}{dt} = \gamma(t)V(t)^{\delta(t)} - \kappa_R(t)R(t)^{\nu(t)}
 $$
 
 - $R(t)$：技術再帰率（R&D、データ資産、組織学習などを含む抽象化された再帰強度）
@@ -89,14 +89,14 @@ RIMCは、「一社一方程式」を次の意味で仮定する：
 
   $$
   \alpha_{\text{drift}}(t)
-  = \int_{t-T}^{t}\varepsilon_R(\tau)\,G(\tau)\,e^{-\lambda(t-\tau)}\,d\tau
+  = \int_{t-T}^{t}\varepsilon_R(\tau)G(\tau)e^{-\lambda(t-\tau)}d\tau
   $$
 
 - これを時間微分すると、**αドリフト微分方程式** が得られる：
 
   $$
   \frac{d\alpha_{\text{drift}}}{dt}
-  = \varepsilon_R(t)\,G(t) - \lambda\,\alpha_{\text{drift}}(t)
+  = \varepsilon_R(t)G(t) - \lambda\alpha_{\text{drift}}(t)
   $$
 
 これは、**緩和方程式（relaxation equation）** に類似しており、  
@@ -123,7 +123,7 @@ $$
 = \int_{t-T}^{t}
 \left[
 r_i(\tau) - r_f(\tau) - \beta_i(\tau)\bigl(r_m(\tau) - r_f(\tau)\bigr)
-\right] e^{-\lambda(t-\tau)}\,d\tau
+\right] e^{-\lambda(t-\tau)}d\tau
 $$
 
 となり、これを理論上の $\alpha_{\text{drift}}(t)$ と比較する。
@@ -137,8 +137,8 @@ RIMCは **αドリフト捕捉率（Alpha Drift Capture Ratio）** を定義す�
 
 $$
 \rho_{\alpha}(t)
-= \frac{\displaystyle \int_{t-T}^{t} \bigl|\alpha_{\text{obs}}(\tau)\bigr|^2\,d\tau}
-{\displaystyle \int_{t-T}^{t} \bigl|\varepsilon_R(\tau)\,G(\tau)\bigr|^2\,d\tau}
+= \frac{\displaystyle \int_{t-T}^{t} \bigl|\alpha_{\text{obs}}(\tau)\bigr|^2d\tau}
+{\displaystyle \int_{t-T}^{t} \bigl|\varepsilon_R(\tau)G(\tau)\bigr|^2d\tau}
 $$
 
 - 適切な正則化を行うことで、構造的に $0 \le \rho_{\alpha}(t) \le 1$。

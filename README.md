@@ -31,7 +31,7 @@ The time-accumulation of that deviation generates a **persistent structural bias
 
 $$
 \alpha_{\text{drift}}(t)
-= \int_{t-T}^{t}\varepsilon_R(\tau)\,G(\tau)\,e^{-\lambda(t-\tau)}\,d\tau
+= \int_{t-T}^{t}\varepsilon_R(\tau)G(\tau)e^{-\lambda(t-\tau)}d\tau
 $$
 
 where:
@@ -53,13 +53,13 @@ RIMC is built around three interacting components:
 A generic form of the value-generation engine:
 
 $$
-\frac{dV}{dt} = L(t)\,A(t)\,R(t)^{\beta(t)} - \kappa_V(t)\,V(t)^{\mu(t)}
+\frac{dV}{dt} = L(t)A(t)R(t)^{\beta(t)} - \kappa_V(t)V(t)^{\mu(t)}
 $$
 
 with a complementary recursion equation for $R(t)$, e.g.:
 
 $$
-\frac{dR}{dt} = \gamma(t)\,V(t)^{\delta(t)} - \kappa_R(t)\,R(t)^{\nu(t)}
+\frac{dR}{dt} = \gamma(t)V(t)^{\delta(t)} - \kappa_R(t)R(t)^{\nu(t)}
 $$
 
 - $R(t)$: technological recursion rate (R&D, data, organizational learning, etc.).
@@ -80,13 +80,13 @@ Given an observation gap between $r_{\text{real}}$ and $r_{\text{market}}$:
 - Define the α-drift as an exponentially weighted memory of that misalignment:
   $$
   \alpha_{\text{drift}}(t)
-  = \int_{t-T}^{t}\varepsilon_R(\tau)\,G(\tau)\,e^{-\lambda(t-\tau)}\,d\tau
+  = \int_{t-T}^{t}\varepsilon_R(\tau)G(\tau)e^{-\lambda(t-\tau)}d\tau
   $$
 
 - Differentiate to obtain the **α-drift differential equation**:
   $$
   \frac{d\alpha_{\text{drift}}}{dt}
-  = \varepsilon_R(t)\,G(t) - \lambda\,\alpha_{\text{drift}}(t)
+  = \varepsilon_R(t)G(t) - \lambda\alpha_{\text{drift}}(t)
   $$
 
 This looks like a **relaxation equation**: a balance between **forward bias generation** and **learning-based decay**.
@@ -111,7 +111,7 @@ $$
 = \int_{t-T}^{t}
 \left[
 r_i(\tau) - r_f(\tau) - \beta_i(\tau)\bigl(r_m(\tau) - r_f(\tau)\bigr)
-\right] e^{-\lambda(t-\tau)}\,d\tau
+\right] e^{-\lambda(t-\tau)}d\tau
 $$
 
 can be compared to theoretical $\alpha_{\text{drift}}(t)$
@@ -124,8 +124,8 @@ To bridge **theoretical α** and **observed α**, RIMC defines the **Alpha Drift
 
 $$
 \rho_{\alpha}(t)
-= \frac{\displaystyle \int_{t-T}^{t} \bigl|\alpha_{\text{obs}}(\tau)\bigr|^2\,d\tau}
-{\displaystyle \int_{t-T}^{t} \bigl|\varepsilon_R(\tau)\,G(\tau)\bigr|^2\,d\tau}
+= \frac{\displaystyle \int_{t-T}^{t} \bigl|\alpha_{\text{obs}}(\tau)\bigr|^2d\tau}
+{\displaystyle \int_{t-T}^{t} \bigl|\varepsilon_R(\tau)G(\tau)\bigr|^2d\tau}
 $$
 
 - $0 \le \rho_{\alpha}(t) \le 1$ by construction (with appropriate regularization).
