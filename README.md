@@ -73,17 +73,20 @@ RIMC assumes **“one firm, one equation”** in the sense that these mappings a
 Given an observation gap between $r_{\text{real}}$ and $r_{\text{market}}$:
 
 Define the recursion misalignment:
+
 $$
 \varepsilon_R(t) = r_{\text{real}}(t) - r_{\text{market}}(t)
 $$
 
 Define the α-drift as an exponentially weighted memory of that misalignment:
+
 $$
 \alpha_{\text{drift}}(t)
 = \int_{t-T}^{t}\varepsilon_R(\tau)G(\tau)e^{-\lambda(t-\tau)}d\tau
 $$
 
-- Differentiate to obtain the **α-drift differential equation**:
+Differentiate to obtain the **α-drift differential equation**:
+
 $$
 \frac{d\alpha_{\text{drift}}}{dt}
 = \varepsilon_R(t)G(t) - \lambda\alpha_{\text{drift}}(t)
