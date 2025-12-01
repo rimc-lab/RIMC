@@ -79,25 +79,25 @@ RIMCは、「一社一方程式」を次の意味で仮定する：
 
 真の再帰率と市場の推定のギャップが存在するとき：
 
-- 再帰率のミスアラインメントを定義：
+再帰率のミスアラインメントを定義：
 
-  $$
-  \varepsilon_R(t) = r_{\text{real}}(t) - r_{\text{market}}(t)
-  $$
+$$
+\varepsilon_R(t) = r_{\text{real}}(t) - r_{\text{market}}(t)
+$$
 
-- αドリフトを、そのミスアラインメントの指数加重メモリとして定義：
+αドリフトを、そのミスアラインメントの指数加重メモリとして定義：
 
-  $$
-  \alpha_{\text{drift}}(t)
-  = \int_{t-T}^{t}\varepsilon_R(\tau)G(\tau)e^{-\lambda(t-\tau)}d\tau
-  $$
+$$
+\alpha_{\text{drift}}(t)
+= \int_{t-T}^{t}\varepsilon_R(\tau)G(\tau)e^{-\lambda(t-\tau)}d\tau
+$$
 
-- これを時間微分すると、**αドリフト微分方程式** が得られる：
+これを時間微分すると、**αドリフト微分方程式** が得られる：
 
-  $$
-  \frac{d\alpha_{\text{drift}}}{dt}
-  = \varepsilon_R(t)G(t) - \lambda\alpha_{\text{drift}}(t)
-  $$
+$$
+\frac{d\alpha_{\text{drift}}}{dt}
+= \varepsilon_R(t)G(t) - \lambda\alpha_{\text{drift}}(t)
+$$
 
 これは、**緩和方程式（relaxation equation）** に類似しており、  
 **フォワード・バイアス生成項** と **学習による減衰項** のバランスとして解釈できる。
@@ -109,8 +109,8 @@ RIMCは、「一社一方程式」を次の意味で仮定する：
 $$
 \frac{dr_i}{dt}
 = \frac{dr_f}{dt}
-+ \beta_i(t)\frac{d(r_m - r_f)}{dt}
-+ \alpha_i(t)
+\quad + \beta_i(t)\frac{d(r_m - r_f)}{dt}
+\quad + \alpha_i(t)
 $$
 
 RIMCは、この「残差」$\alpha_i(t)$ を純粋なノイズではなく、  
