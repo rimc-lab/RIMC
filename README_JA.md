@@ -246,7 +246,7 @@ RIMC自体はトレーディングルールを提案しない。
 
 RIMCを社内メモ、プレゼン、リサーチノート等で参照する場合は、暫定的に以下のように引用できる：
 
-> [著者名], “RIMC: Recursive Intelligence Market Cycle — A Framework for α-Drift and Learning Markets,” working manuscript, 2025.
+> Reiya Sodeyama, “RIMC: Recursive Intelligence Market Cycle — A Framework for α-Drift and Learning Markets,” working manuscript, 2025.
 
 マニュスクリプトのバージョンやDOIが確定した時点で、  
 適宜アップデートしてほしい。
@@ -297,7 +297,6 @@ RIMC は「リムシー」と読みます。
 
 RIMC に関する研究的な議論、技術的な提案、コラボレーションの相談などがありましたら、以下の GitHub 提供の noreply メールアドレスからご連絡いただけます。
 
-247207421+rimc-lab@users.noreply.github.com
+専用のプロジェクト用メールアドレスは現在準備中です。
 
-このアドレスは GitHub によって安全に転送され、個人のメールアドレスは公開されません。
 公開のフィードバックを希望される場合は、このリポジトリの Issue または Discussion へ投稿していただいても構いません。

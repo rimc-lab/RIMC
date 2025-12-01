@@ -226,7 +226,7 @@ Potential future work (if this evolves into an applied project):
 
 If you reference RIMC in internal memos, talks, or research notes, a generic citation could be:
 
-> [Author], “RIMC: Recursive Intelligence Market Cycle — A Framework for α-Drift and Learning Markets,” working manuscript, 2025.
+> Reiya Sodeyama, “RIMC: Recursive Intelligence Market Cycle — A Framework for α-Drift and Learning Markets,” working manuscript, 2025.
 
 When the manuscript has a stable version or DOI, you can update the citation accordingly.
 
@@ -271,7 +271,6 @@ This pronunciation is used throughout the documentation and is recommended when 
 
 For research discussions, technical suggestions, or collaboration proposals related to RIMC, you may contact me via the GitHub-provided noreply address below:
 
-247207421+rimc-lab@users.noreply.github.com
+Currently preparing a dedicated project address
 
-This address safely forwards to my private inbox while keeping my personal email confidential.
 If you prefer to submit feedback publicly, feel free to open an Issue or Discussion in this repository.
