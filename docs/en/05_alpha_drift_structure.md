@@ -29,7 +29,7 @@ the lagged difference between the real recursion rate and the market-imputed rec
 $$
 \boxed{
 \alpha_{\text{drift}}(t)
-= \int_{t-T}^{t} \varepsilon_R(\tau)\, G(\tau)\, e^{-\lambda (t-\tau)}\, d\tau
+= \int_{t-T}^{t} \varepsilon_R(\tau)G(\tau)e^{-\lambda (t-\tau)} d\tau
 }
 $$
 
@@ -71,7 +71,7 @@ The cycle dynamics satisfy:
 
 $$
 \frac{d\alpha_{\text{cycle}}}{dt}
-= \varepsilon_R(t)\,G(t) - \lambda\,\alpha_{\text{cycle}}(t)
+= \varepsilon_R(t)G(t) - \lambda\alpha_{\text{cycle}}(t)
 $$
 
 Integrating this relationship yields the drift:
@@ -157,7 +157,7 @@ In first-order approximation, the drift evolves as:
 
 $$
 \frac{d\alpha_{\text{drift}}}{dt}
-= \varepsilon_R(t)\,G(t)
+= \varepsilon_R(t)G(t)
 
 - \lambda\,\alpha(t)
 $$
@@ -193,11 +193,8 @@ The full evolution combines structural and non-structural forces:
 $$
 \boxed{
 \frac{d\alpha_{\text{drift}}}{dt}
-=
--\underbrace{\varepsilon_R(t)\,G(t)}_{\text{Endogenous Drift}}
-
+= -\underbrace{\varepsilon_R(t)G(t)}_{\text{Endogenous Drift}}
 -\underbrace{\lambda\,\alpha(t)}_{\text{Learning Decay}}
-
 -\underbrace{\xi(t)}_{\text{Noise-Induced Drift}}
 }
 \tag{5.5.1}
@@ -206,7 +203,7 @@ $$
 The exogenous noise term (from §4.4) is:
 
 $$
-\xi(t)=\xi_0(t)+\chi\,\phi(t)
+\xi(t)=\xi_0(t)+\chi\phi(t)
 $$
 
 where
@@ -237,12 +234,10 @@ it persists as a **statistical residual**.
 From (5.6):
 
 $$
+\boxed{
 \frac{d\alpha_{\text{drift}}}{dt}
-= \varepsilon_R(t)\,G(t)
-
-- \lambda\,\alpha(t)
-- \xi(t)
-\tag{5.6}
+= \varepsilon_R(t)G(t) - \lambda\alpha(t) - \xi(t)
+}\tag{5.6}
 $$
 
 This expresses the market as a **dual-drift dynamic system**.
@@ -295,9 +290,8 @@ Formally,
 $$
 \text{Market}
 = \text{Structural Delay System (Endogenous)}
-
-* \text{Stochastic Interference System (Exogenous)}.
-  $$
+{}+ \text{Stochastic Interference System (Exogenous)}
+$$
 
 Hence, RIMC does not describe a conventional “forecasting model,”
 but a **recursive dynamical system in which technological evolution and market sentiment co-resonate**.

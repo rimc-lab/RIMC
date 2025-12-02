@@ -45,7 +45,7 @@ This dual structure of observation creates the foundational **asynchrony between
 
 ---
 
-# 3.2 The Market Estimate ( r_{\text{market}} )
+# 3.2 The Market Estimate $r_{\text{market}}$
 
 ### Introduction of the Observation-Layer Operators
 
@@ -114,7 +114,7 @@ Rewriting the RIMC value-generation equation from the standpoint of the market:
 
 $$
 \dot V_{\text{obs}}(t)
-= L(t)\,A(t)\,[r_{\text{market}}(t-\tau)]^\beta
+= L(t)A(t)[r_{\text{market}}(t-\tau)]^\beta
 $$
 
 Since the market does not know the true $L, A$, it substitutes estimates $\hat L(t),\hat A(t)$.
@@ -166,7 +166,7 @@ $$
 \boxed{
 \alpha(t)
 = \int_{t-T}^{t}
-\varepsilon_R(\tau)\,G(\tau)\,e^{-\lambda(t-\tau)}\, d\tau
+\varepsilon_R(\tau)G(\tau)e^{-\lambda(t-\tau)} d\tau
 }
 $$
 
@@ -182,15 +182,8 @@ Short-horizon markets (large $\lambda$ forget quickly; long-horizon markets accu
 ### Sensitivity Kernel (G(t))
 
 $$
-\boxed{
-G(t)
-=
-
-\frac{\partial}{\partial r}
-\left(\frac{dV}{dt}\right)\Big|{r=r_\ast(t)}
-=
-L(t)\,A(t)\,\beta\, [r_\ast(t)]^{\beta-1}
-}
+G(t)=\frac{\partial}{\partial r}\left(\frac{dV}{dt}\right)\Big|_{r=r_\ast(t)}
+= L(t)A(t)\beta[r_\ast(t)]^{\beta-1}
 $$
 
 A natural choice for (r_\ast(t)) is the market-observed recursion $r_{\text{market}}(t)$.
@@ -204,7 +197,7 @@ Differential approximation (ignoring window-edge effects):
 $$
 \boxed{
 \frac{d\alpha}{dt}
-= \varepsilon_R(t)\,G(t) - \lambda\,\alpha(t)
+= \varepsilon_R(t)G(t) - \lambda\alpha(t)
 }
 $$
 
@@ -222,16 +215,14 @@ For scalar recursion $r = h(\hat{\mathbf R})$:
 
 $$
 \frac{\partial}{\partial r}\left(\frac{dV}{dt}\right)
-=
-L(t)A(t)\beta r^{\beta-1}
+= L(t)A(t)\beta r^{\beta-1}
 $$
 
 For vector recursion:
 
 $$
 \nabla_{\mathbf R}\left(\frac{dV}{dt}\right)
-=
-L(t)A(t)\beta r^{\beta-1}\nabla_{\mathbf R}h(\mathbf R)
+= L(t)A(t)\beta r^{\beta-1}\nabla_{\mathbf R}h(\mathbf R)
 $$
 
 ---
@@ -264,7 +255,7 @@ Each observer can be modeled with a distinct information-delay parameter $\tau_i
 For a given real recursion rate $r_{\text{real}}(t)$, each observer maintains a **shifted mapping**:
 
 $$
-r_{\text{market}\,i}(t)
+r_{\text{market}i}(t)
 \approx
 r_{\text{real}}(t - \tau_i)
 $$
@@ -272,9 +263,8 @@ $$
 with the corresponding **observation gap**:
 
 $$
-\varepsilon_{R\,i}(t)
-=
-r_{\text{real}}(t) - r_{\text{market}\,i}(t)
+\varepsilon_{Ri}(t)
+= r_{\text{real}}(t) - r_{\text{market}i}(t)
 $$
 
 The **interference among these time-shifted gaps** produces the aggregate structure known empirically as market volatility.
@@ -291,7 +281,7 @@ $$
 \left|
 \frac{d}{dt}\varepsilon_R(t)
 \right|
-L(t)\,A(t)\, \beta \, [r_*(t)]^{\beta-1}
+L(t)A(t)\beta[r_*(t)]^{\beta-1}
 $$
 
 Here, $\varepsilon_R(t)$ represents the discrepancy between the real technological state and its market interpretation.
@@ -402,18 +392,14 @@ This can be formalized as a **convolution-style integral** for value drift:
 
 $$
 \frac{dV}{dt}
-=
-\int
-L_i(t)\,A_i(t)\,[r(t-\tau_i)]^{\beta_i}\, w(i)\,di
+= \int L_i(t)A_i(t)[r(t-\tau_i)]^{\beta_i}w(i) di
 $$
 
 or equivalently, as a continuous-kernel representation:
 
 $$
 \frac{dV}{dt}
-=
-\int_0^\infty
-K(\tau\,t)\,[r(t-\tau)]^{\beta(\tau)}\, d\tau
+= \int_0^\infty K(\tau,t)[r(t-\tau)]^{\beta(\tau)} d\tau
 $$
 
 where $K(\tau,t)$ is the kernel encoding the **distribution of observational delays**.
@@ -481,9 +467,8 @@ Classical theories such as CAPM and MPT rely on **same-time probability distribu
 The standard expression is:
 
 $$
-E[R_i] - R_f
-=
-\beta_i,[E[R_m] - R_f]
+E[R_i]-R_f
+= \beta_i\,[E[R_m]-R_f]
 $$
 
 Here, “risk” refers to volatility and covariance—
@@ -520,19 +505,13 @@ In reality, heterogeneous learning rates $\lambda$ cause **identical-β assets**
 Classically, expected return is decomposed as:
 
 $$
-E[R]
-=
-R_f + \text{Risk Premium}
+E[R] = R_f + \text{Risk Premium}
 $$
 
 RIMC generalizes this to:
 
 $$
-E[R]
-=
-R_f
-+ \text{Risk Premium}
-+ \text{Asynchrony Premium} (\alpha)
+E[R] = R_f + \text{Risk Premium} + \text{Asynchrony Premium}(\alpha)
 $$
 
 This **Asynchrony Premium** corresponds to RIMC’s **structural $\alpha$**.
@@ -543,7 +522,7 @@ $$
 \alpha(t)
 \propto
 \int_{t-T}^{t}
-\varepsilon_R(\tau)\, d\tau
+\varepsilon_R(\tau) d\tau
 $$
 
 Subsequent chapters formalize how this structural $\alpha$

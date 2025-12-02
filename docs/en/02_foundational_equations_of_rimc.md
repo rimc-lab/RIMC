@@ -39,8 +39,8 @@ The dual-loop structure of RIMC is defined as:
 $$
 \boxed{
 \begin{cases}
-\dfrac{dV}{dt} = L(t)\,A(t)\,[r(t-\tau)]^{\beta(t)} - \kappa_V(t)\, V(t)^{\mu(t)} \\
-\dfrac{dr}{dt} = \gamma(t)\, V(t)^{\delta(t)} - \kappa_R(t)\, r(t)^{\nu(t)}
+\dfrac{dV}{dt} = L(t)A(t)[r(t-\tau)]^{\beta(t)} - \kappa_V(t)V(t)^{\mu(t)} \\
+\dfrac{dr}{dt} = \gamma(t)V(t)^{\delta(t)} - \kappa_R(t)r(t)^{\nu(t)}
 \end{cases}}
 $$
 
@@ -172,13 +172,14 @@ The flow of information in RIMC is summarized as:
 
 $$
 \mathbf{R}(t)
-\xrightarrow[\text{externalization}]{\mathcal{O}}
+\overset{\mathcal{O}}{\underset{\text{externalization}}{\longrightarrow}}
 S(t)
-\xrightarrow[\text{interpretation}]{\mathcal{I}}
+\overset{\mathcal{I}}{\underset{\text{interpretation}}{\longrightarrow}}
 \hat{\mathbf{R}}(t)
-\xrightarrow[\text{scalarization}]{h}
+\overset{h}{\underset{\text{scalarization}}{\longrightarrow}}
 r_{\text{market}}(t)
 $$
+
 
 Thus, $S(t)$ represents the **symbolic layer**:
 the external informational footprint of internal technological recursion—earnings reports, disclosures, media, analyst outputs, and social communication.
@@ -236,10 +237,9 @@ and **observable market/environmental data** (exogenous layer) via statistical/M
 
 $$
 \dfrac{dV}{dt}
-= L(t)A(t)\,[r(t-\tau)]^{\beta(t)}
-
-- \kappa_V(t)V(t)^{\mu(t)}
-  $$
+= L(t)A(t)[r(t-\tau)]^{\beta(t)}
+{}- \kappa_V(t)V(t)^{\mu(t)}
+$$
 
 This equation expresses how technological recursiveness translates into economic value.
 
@@ -254,9 +254,8 @@ This equation expresses how technological recursiveness translates into economic
 $$
 \dfrac{dr}{dt}
 = \gamma(t)V(t)^{\delta(t)}
-
-- \kappa_R(t) r(t)^{\nu(t)}
-  $$
+{}- \kappa_R(t) r(t)^{\nu(t)}
+$$
 
 Economic value $V(t)$ promotes technological recursion through R&D expenditure, talent acquisition, infrastructure investment, and data accumulation.
 
@@ -283,10 +282,9 @@ Then the value equation becomes:
 
 $$
 \frac{d\tilde V}{d\tilde t}
-= \tilde L(\tilde t)\,\tilde A(\tilde t)\,\tilde r^{\beta}
-
-- \tilde\kappa_V\,\tilde V^{\mu}\,
-  $$
+= \tilde L(\tilde t)\tilde A(\tilde t)\tilde r^{\beta}
+{}- \tilde\kappa_V\tilde V^{\mu}
+$$
 
 where the product $\tilde L(\tilde t)\tilde A(\tilde t)$ is dimensionless.
 

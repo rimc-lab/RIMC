@@ -54,9 +54,9 @@ This creates a **non-simultaneous mapping**:
 
 $$
 R(t)
-;\xrightarrow[\text{observation delay};\tau]{};
+\xrightarrow[\text{observation delay}\tau]{}
 \hat{R}(t)
-;\rightarrow;
+\rightarrow
 V(t)
 $$
 

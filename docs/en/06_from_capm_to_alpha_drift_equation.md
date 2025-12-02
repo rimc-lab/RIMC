@@ -20,9 +20,8 @@ A time-dependent expansion yields
 $$
 \frac{dr_i}{dt}
 = \frac{dr_f}{dt}
-
-+ \beta_i(t)\frac{d(r_m - r_f)}{dt}
-+ \alpha_i(t)
+{}+ \beta_i(t)\frac{d(r_m - r_f)}{dt}
+{}+ \alpha_i(t)
 $$
 
 Here, $r_i(t)$ is the instantaneous return (e.g., log-price derivative), $\beta_i(t)$ is a time-varying beta, and $\alpha_i(t)$ represents the **structural deviation induced by non-synchronous learning**, not mere noise.
@@ -37,7 +36,7 @@ But because real markets always operate with a **finite delay $\tau>0$**, $\alph
 When market responses incorporate delay, the relationship becomes
 
 $$
-r_i(t) = r_f(t) + \beta_i(t-\tau)\,[r_m(t-\tau) - r_f(t-\tau)] + \epsilon_i(t)
+r_i(t) = r_f(t) + \beta_i(t-\tau)[r_m(t-\tau) - r_f(t-\tau)] + \epsilon_i(t)
 $$
 
 The term $\epsilon_i(t)$ is the **delay-induced residual**, treated as noise in static CAPM.
@@ -46,10 +45,9 @@ Taking the time derivative:
 $$
 \frac{dr_i}{dt}
 = \frac{dr_f}{dt}
-
-+ \dot{\beta}_i(t-\tau)\,[r_m(t-\tau) - r_f(t-\tau)]
-+ \beta_i(t-\tau)\,\frac{d}{dt}\big[r_m(t-\tau) - r_f(t-\tau)\big]
-+ \dot{\epsilon}_i(t)
+{}+ \dot{\beta}_i(t-\tau)\,[r_m(t-\tau)-r_f(t-\tau)]
+{}+ \beta_i(t-\tau)\,\frac{d}{dt}[r_m(t-\tau)-r_f(t-\tau)]
+{}+ \dot{\epsilon}_i(t)
 $$
 
 and using $\frac{d}{dt}r_x(t-\tau)=\dot r_x(t-\tau)$,
@@ -57,10 +55,9 @@ and using $\frac{d}{dt}r_x(t-\tau)=\dot r_x(t-\tau)$,
 $$
 \frac{dr_i}{dt}
 = \frac{dr_f}{dt}
-
-+ \dot{\beta}_i(t-\tau)\,[r_m(t-\tau) - r_f(t-\tau)]
-+ \beta_i(t-\tau)\,[\dot r_m(t-\tau) - \dot r_f(t-\tau)]
-+ \dot{\epsilon}_i(t)
+{}+ \dot{\beta}_i(t-\tau)\,[r_m(t-\tau)-r_f(t-\tau)]
+{}+ \beta_i(t-\tau)\,[\dot r_m(t-\tau)-\dot r_f(t-\tau)]
+{}+ \dot{\epsilon}_i(t)
 $$
 
 As long as $\dot{\beta}_i$ and $\dot{\epsilon}_i$ are non-zero,
@@ -78,7 +75,7 @@ $$
 \underbrace{\epsilon_i(t)}_{\text{CAPM residual}}
 =
 \underbrace{\varepsilon_R(t)\,G(t)}_{\text{delay-induced structural term}}
-+\underbrace{\xi(t)}_{\text{exogenous noise}}
+{}+\underbrace{\xi(t)}_{\text{exogenous noise}}
 $$
 
 Here:
@@ -92,7 +89,7 @@ Integrating $\epsilon_i(t)$ over a finite memory window $T$ with an exponential 
 $$
 \boxed{
 \alpha_{\text{drift}}(t)
-= \int_{t-T}^{t}\varepsilon_R(\tau)\,G(\tau)\,e^{-\lambda(t-\tau)}\,d\tau
+= \int_{t-T}^{t}\varepsilon_R(\tau)G(\tau)e^{-\lambda(t-\tau)} d\tau
 }
 $$
 
@@ -102,7 +99,7 @@ Differentiating gives the **central $\alpha$-drift equation of RIMC**:
 
 $$
 \frac{d\alpha_{\text{drift}}}{dt}
-= \varepsilon_R(t)\,G(t) - \lambda\,\alpha_{\text{drift}}(t)
+= \varepsilon_R(t)G(t) - \lambda\alpha_{\text{drift}}(t)
 $$
 
 * first term: **forward-bias generation** through asynchronous information flow
@@ -146,10 +143,11 @@ the “memory of asynchronous learning” is observable in historical data.
 Define the observed drift component:
 
 $$
+\boxed{
 \alpha_{\text{obs}}(t)
 = \int_{t-T}^{t}\left[r_i(\tau) - r_f(\tau) - \beta_i(\tau)(r_m(\tau) - r_f(\tau))\right]
-\, e^{-\lambda(t-\tau)}\,d\tau
-\tag{6.6}
+e^{-\lambda(t-\tau)} d\tau
+}\tag{6.6}
 $$
 
 With $\lambda>0$, the integral is stable and interpretable as **informational lag memory**.
@@ -198,8 +196,8 @@ By comparing the theoretical drift-generation strength with the observed drift s
 
 $$
 \rho_{\alpha}(t)
-= \frac{\displaystyle \int_{t-T}^{t} |\alpha_{\text{obs}}(\tau)|^2\,d\tau}
-{\displaystyle \int_{t-T}^{t} |\varepsilon_R(\tau)\,G(\tau)|^2\,d\tau}
+= \frac{\displaystyle \int_{t-T}^{t} |\alpha_{\text{obs}}(\tau)|^2 d\tau}
+{\displaystyle \int_{t-T}^{t} |\varepsilon_R(\tau)G(\tau)|^2 d\tau}
 $$
 
 Where
@@ -280,7 +278,7 @@ RIMC formalizes the transformation “technology → value”, making $R(t)$ a l
 The RV-equation defines how recursive technological evolution generates economic value:
 
 $$
-\frac{dV}{dt} = L(t)\,A(t)\,R(t)^{\beta}
+\frac{dV}{dt} = L(t)A(t)R(t)^{\beta}
 $$
 
 Here $L(t)$ denotes capital efficiency, $A(t)$ institutional/environmental factors, and $R(t)$ the recursion rate.
@@ -296,8 +294,8 @@ $$
 \frac{dr_i}{dt}
 = \frac{dr_f}{dt}
 
-+ \beta_i(t)\frac{d(r_m - r_f)}{dt}
-+ \alpha_i(t)
+{}+ \beta_i(t)\frac{d(r_m - r_f)}{dt}
+{}+ \alpha_i(t)
 $$
 
 Here $r_i(t)$ is the individual return, i.e., the observable derivative of $V(t)$.
@@ -316,28 +314,22 @@ RV-based theoretical forecast:
 
 $$
 V_{\text{pred}}(t+\tau)
-= V(t) + \int_t^{t+\tau} L(u)\,A(u)\,R(u)^{\beta}\,du
+= V(t) + \int_t^{t+\tau} L(u)A(u)R(u)^{\beta} du
 $$
 
 CAPM-based observed evolution:
 
 $$
 r_i(t+\tau)
-= \int_t^{t+\tau} \frac{1}{V(u)}\frac{dV(u)}{dt}\,du
-
-+ \int_t^{t+\tau}\alpha_i(u)\,du
+= \int_t^{t+\tau}\frac{1}{V(u)}\frac{dV(u)}{dt} du
++ \int_t^{t+\tau}\alpha_i(u) du
 $$
 
 Define the **finite-time lead error**:
 
 $$
-\Delta_{\alpha}(t\,\tau)
-= \frac{1}{\tau} \int_t^{t+\tau}
-\left[
-\frac{1}{V(u)}\frac{dV(u)}{dt}
-
-+ \bigl(r_f(u)+\beta_i(u)(r_m(u)-r_f(u))\bigr)
-  \right] du
+\Delta_{\alpha}(t,\tau)
+= \frac{1}{\tau}\int_t^{t+\tau}\left[\frac{1}{V(u)}\frac{dV(u)}{du} + \left(r_f(u)+\beta_i(u)(r_m(u)-r_f(u))\right)\right]du
 $$
 
 The closer $\Delta_{\alpha}$ is to zero, the more accurately markets learn the recursive structure under finite delay.

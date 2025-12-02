@@ -32,8 +32,8 @@ Next, define the sensitivity kernel (the mapping from $R$-gap to value dynamics)
 
 $$
 G(t)
-= \left.\frac{\partial}{\partial r} \left( \frac{dV}{dt} \right)\right|{r=r_\ast(t)}
-= L(t)\, A(t)\, \beta \, [r_\ast(t)]^{\beta - 1}
+= \left.\frac{\partial}{\partial r} \left( \frac{dV}{dt} \right)\right|_{r=r_\ast(t)}
+= L(t)A(t)\beta[r_\ast(t)]^{\beta - 1}
 $$
 
 Using this kernel, the **general form of the $\alpha$-cycle with an exponential memory kernel** is:
@@ -41,7 +41,7 @@ Using this kernel, the **general form of the $\alpha$-cycle with an exponential 
 $$
 \boxed{
 \alpha_{\text{cycle}}(t)
-= \int_{t_0}^{t} \varepsilon_R(\tau)\, G(\tau)\, e^{-\lambda (t-\tau)}\, d\tau
+= \int_{t_0}^{t} \varepsilon_R(\tau)G(\tau)e^{-\lambda (t-\tau)} d\tau
 }
 \tag{4.1}
 $$
@@ -63,7 +63,7 @@ RIMC therefore introduces a finite memory window $T$:
 $$
 \boxed{
 \alpha_{\text{cycle}}(t)
-= \int_{t-T}^{t}\varepsilon_R(\tau)\, G(\tau)\, e^{-\lambda (t-\tau)}\, d\tau
+= \int_{t-T}^{t}\varepsilon_R(\tau)G(\tau)e^{-\lambda (t-\tau)} d\tau
 }
 $$
 
@@ -81,8 +81,10 @@ The interaction among $T$, the learning rate $\lambda$, and the technological am
 Differentiating (4.1) while ignoring window-edge terms yields the first-order approximation:
 
 $$
+\boxed{
 \frac{d\alpha_{\text{cycle}}}{dt}
-= \varepsilon_R(t)\, G(t) - \lambda\, \alpha_{\text{cycle}}(t)
+= \varepsilon_R(t)G(t) - \lambda\alpha_{\text{cycle}}(t)
+}
 \tag{4.2}
 $$
 
@@ -189,10 +191,7 @@ RIMC treats this as an **exogenous noise term** $\xi(t)$:
 
 $$
 \boxed{
-\frac{d\alpha}{dt}
-= \varepsilon_R(t)\, G(t)
-- \lambda \alpha(t)
-- \xi(t)
+\frac{d\alpha}{dt}=\varepsilon_R(t)G(t)-\lambda\alpha(t)-\xi(t)
 }
 \tag{4.4}
 $$
@@ -200,7 +199,7 @@ $$
 Decompose $\xi(t)$ as:
 
 $$
-\xi(t)=\xi_0(t)+\chi\,\phi(t)
+\xi(t)=\xi_0(t)+\chi\phi(t)
 $$
 
 Where:
@@ -233,8 +232,8 @@ As a result, the $\alpha$-cycle is undergoing **high-frequency scaling (shorteni
 In a linearized approximation, the scaling rule can be written as:
 
 $$
-T_{\alpha} \propto \frac{1}{\lambda + \kappa_{\text{eff}}},\qquad
-\kappa_{\text{eff}} \equiv \beta\,\gamma\,\Xi(R_{\ast}\,V_{\ast}\,\ldots)
+T_{\alpha}\propto\frac{1}{\lambda+\kappa_{\text{eff}}},\qquad
+\kappa_{\text{eff}}\equiv\beta\gamma\Xi(R_{\ast}V_{\ast}\ldots)
 $$
 
 Here $\Xi$ is a coefficient aggregating sensitivities, level effects, and institutional frictions.
@@ -260,7 +259,7 @@ Accordingly, $\alpha$ can be written with observer-specific delays and sensitivi
 
 $$
 \alpha_{\text{total}}(t)
-= \sum_i \int_{t-T_i}^{t}\varepsilon_{R,i}(\tau)\, G_i(\tau)\, e^{-\lambda_i (t-\tau)}\, d\tau
+= \sum_i \int_{t-T_i}^{t}\varepsilon_{Ri}(\tau)G_i(\tau)e^{-\lambda_i (t-\tau)} d\tau
 $$
 
 * **Micro-$\alpha$ (short horizon)**: model updates, GPU supply shifts, pricing changes (months–years scale)
