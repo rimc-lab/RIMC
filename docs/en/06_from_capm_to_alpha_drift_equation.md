@@ -73,9 +73,8 @@ The delay residual $\epsilon_i(t)$ can be reinterpreted as a **relaxation variab
 
 $$
 \underbrace{\epsilon_i(t)}_{\text{CAPM residual}}
-=
-\underbrace{\varepsilon_R(t)\,G(t)}_{\text{delay-induced structural term}}
-{}+\underbrace{\xi(t)}_{\text{exogenous noise}}
+= \underbrace{\varepsilon_R(t)G(t)}_{\text{delay-induced structural term}}
+{}+ \underbrace{\xi(t)}_{\text{exogenous noise}}
 $$
 
 Here:

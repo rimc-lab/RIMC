@@ -95,7 +95,7 @@ $$
 \boxed{
 \alpha_{\text{drift}}(t)
 = \int_{t-T}^{t}
-\varepsilon_R(\tau)\, G(\tau)\, e^{-\lambda (t-\tau)}\, d\tau
+\varepsilon_R(\tau)G(\tau)e^{-\lambda (t-\tau)} d\tau
 }
 $$
 
@@ -131,20 +131,17 @@ FF5 can be expressed as a **six-dimensional system of coupled differential equat
 linking portfolio value $V(t)$ with five state variables $R_k(t)$:
 
 $$
-\boxed{
-\left\{
+\begin{cases}
 \begin{aligned}
-
-\dfrac{dV}{dt} &= \mathcal{L}(Z_t) \, \left[ \sum_{k \in \{M, S, H, R, C\}} w_k(t) \cdot R_k(t-\tau_k) \right]^{\beta(t)} - \kappa_V(t) V(t)^{\mu(t)} \\
-
-\dfrac{dR_M}{dt} &= \gamma_M V^{\delta_M} - \kappa_M R_M \quad (\text{Market}) \\
-\dfrac{dR_S}{dt} &= \gamma_S V^{\delta_S} - \kappa_S R_S \quad (\text{SMB}) \\
-\dfrac{dR_H}{dt} &= \gamma_H V^{\delta_H} - \kappa_H R_H \quad (\text{HML}) \\
-\dfrac{dR_R}{dt} &= \gamma_R V^{\delta_R} - \kappa_R R_R \quad (\text{RMW}) \\
-\dfrac{dR_C}{dt} &= \gamma_C V^{\delta_C} - \kappa_C R_C \quad (\text{CMA})
+\dfrac{dV}{dt} &= \mathcal{L}(Z_t)\left[\sum_{k\in\{M,S,H,R,C\}} w_k(t)R_k(t-\tau_k)\right]^{\beta(t)}
+{}- \kappa_V(t)V(t)^{\mu(t)} \\
+\dfrac{dR_M}{dt} &= \gamma_M V^{\delta_M} - \kappa_M R_M (\text{Market}) \\
+\dfrac{dR_S}{dt} &= \gamma_S V^{\delta_S} - \kappa_S R_S (\text{SMB}) \\
+\dfrac{dR_H}{dt} &= \gamma_H V^{\delta_H} - \kappa_H R_H (\text{HML}) \\
+\dfrac{dR_R}{dt} &= \gamma_R V^{\delta_R} - \kappa_R R_R (\text{RMW}) \\
+\dfrac{dR_C}{dt} &= \gamma_C V^{\delta_C} - \kappa_C R_C (\text{CMA})
 \end{aligned}
-\right.
-}
+\end{cases}
 $$
 
 Here:

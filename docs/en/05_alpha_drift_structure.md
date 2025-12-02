@@ -79,7 +79,7 @@ Integrating this relationship yields the drift:
 $$
 \alpha_{\text{drift}}(t)
 = \int_{t_0}^{t}
-\frac{d\alpha_{\text{cycle}}}{d\tau}\, d\tau
+\frac{d\alpha_{\text{cycle}}}{d\tau} d\tau
 $$
 
 (here, additive constants depend on the reference point $t_0$).
