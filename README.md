@@ -1,8 +1,6 @@
 # RIMC: Recursive Intelligence Market Cycle  
 _A Framework for α-Drift and Learning Markets_
 
----
-
 > For the Japanese version of this document, see  
 > **[README_JA.md](./README_JA.md)**.
 
@@ -16,8 +14,6 @@ RIMC (Recursive Intelligence Market Cycle) is a **theoretical framework** that:
 
 RIMC is **not** a price-forecasting tool.  
 It is a **language for describing “how information arrives in the market and how slowly it is absorbed”**.
-
----
 
 ## 2. Core Idea in One Paragraph
 
@@ -41,8 +37,6 @@ where:
 - $\lambda$ is a **learning / forgetting rate**.
 
 This $\alpha_{\text{drift}}$ is what RIMC calls **structural α**, emerging purely from **finite-time learning and observation delay**.
-
----
 
 ## 3. Mathematical Skeleton (Very High Level)
 
@@ -119,8 +113,6 @@ $$
 
 can be compared to theoretical $\alpha_{\text{drift}}(t)$
 
----
-
 ## 4. Alpha Drift Capture Ratio
 
 To bridge **theoretical α** and **observed α**, RIMC defines the **Alpha Drift Capture Ratio**:
@@ -136,8 +128,6 @@ $$
   - How much of the theoretically available α-drift the market has actually “captured” within a finite window.
 - Recasts EMH into a **finite-time learning efficiency** problem:
   Markets are not required to be “fully efficient”, only to learn with some finite speed.
-
----
 
 ## 5. Repository Structure (Suggested)
 
@@ -165,8 +155,6 @@ A typical layout for this project might be:
 
 Feel free to rename files; the framework is text-first and tool-agnostic (LaTeX, Markdown, or a mix).
 
----
-
 ## 6. How a Quant Might Use RIMC
 
 RIMC is designed as a **meta-layer** that can sit on top of existing models:
@@ -188,8 +176,6 @@ RIMC is designed as a **meta-layer** that can sit on top of existing models:
 
 RIMC itself does not prescribe a trading strategy; it provides a **language** to discuss the **time structure of information and learning** in any strategy.
 
----
-
 ## 7. What RIMC Is Not
 
 To avoid misunderstandings:
@@ -203,8 +189,6 @@ Instead, RIMC should be read as:
 - A **hypothesis** about how structural α arises from **finite-speed learning and observation delay**.
 - A proposal for how to **measure** that structure using existing market data and factor models.
 - A bridge between **nonlinear dynamical systems** and **practical factor-based finance**.
-
----
 
 ## 8. Status and Roadmap
 
@@ -220,8 +204,6 @@ Potential future work (if this evolves into an applied project):
 - Empirical estimation of **finite-time efficiency** $\rho_{\alpha}(t)$ across sectors, factors, or regions.
 - Comparison with classical EMH and factor models for different horizons.
 
----
-
 ## 9. Citation
 
 If you reference RIMC in internal memos, talks, or research notes, a generic citation could be:
@@ -230,16 +212,12 @@ If you reference RIMC in internal memos, talks, or research notes, a generic cit
 
 When the manuscript has a stable version or DOI, you can update the citation accordingly.
 
----
-
 ## 10. License
 
 This project is licensed under the **Creative Commons Attribution 4.0 International (CC BY 4.0)** license.
 
 You are free to share, adapt, and use this work — including for commercial purposes —
 as long as appropriate credit is given.
-
----
 
 ## 11. Origin and Disclaimer
 
@@ -269,8 +247,8 @@ This pronunciation is used throughout the documentation and is recommended when 
 
 ## Contact
 
-For research discussions, technical suggestions, or collaboration proposals related to RIMC, you may contact me via the GitHub-provided noreply address below:
+For research discussions, technical suggestions, or collaboration proposals related to RIMC, you may contact me via the address below:
 
-Currently preparing a dedicated project address
+rimclab.project@gmail.com
 
 If you prefer to submit feedback publicly, feel free to open an Issue or Discussion in this repository.
